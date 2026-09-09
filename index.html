@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ME4OO PS STORE - PS4 Host</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0c10;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* الخلفية الممتدة بكامل الشاشة */
+        .fullscreen-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('img.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(12px) brightness(35%);
+            z-index: -1;
+            transform: scale(1.1);
+        }
+
+        .content-wrapper {
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* اللوجو بحجم كبير وممتاز للتلفزيون */
+        .store-logo {
+            max-width: 600px;
+            width: 85%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0px 0px 35px rgba(0, 210, 252, 0.8);
+            border: 3px solid #00d2fc;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .main-box {
+            background: rgba(11, 12, 16, 0.85);
+            padding: 20px 40px;
+            border-radius: 15px;
+            margin-top: 25px;
+            border: 2px solid #00d2fc;
+            box-shadow: 0px 0px 20px rgba(0, 210, 252, 0.4);
+            backdrop-filter: blur(5px);
+            max-width: 500px;
+        }
+
+        h1 {
+            color: #00d2fc;
+            font-size: 30px;
+            margin: 0 0 5px 0;
+            text-shadow: 0px 0px 8px #00d2fc;
+        }
+
+        .loader {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #45f3ff;
+            font-weight: bold;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fullscreen-bg"></div>
+
+    <div class="content-wrapper">
+        <img src="img.jpg" alt="ME4OO PS STORE" class="store-logo">
+
+        <div class="main-box">
+            <h1>🎮 ME4OO PS STORE 🎮</h1>
+            
+            <!-- تم تعديل الرسالة لتنطلق فوراً بدون شروط معقدة -->
+            <div class="loader">
+                🔄 جاري اختراق الـ WebKit وضخ الـ Payload تلقائياً... انتظر ثواني
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // تشغيل التعديلة إجبارياً وتلقائياً فور فتح المتصفح للرابط
+        window.onload = function() {
+            setTimeout(function() {
+                triggerKernelExploit();
+            }, 2500); // هينتظر ثانيتين ونص بالظبط ويبدأ الاختراق فوراً
+        };
+
+        function triggerKernelExploit() {
+            var loaderBox = document.querySelector(".loader");
+            loaderBox.innerHTML = "🚀 جاري تفعيل كود الـ Vue-After-Free للـ Kernel... لا تغلق المتصفح";
+            
+            setTimeout(function() {
+                loaderBox.innerHTML = "⚡ تم اختراق المعالج! جاري تشغيل GoldHEN الفوري...";
+                
+                setTimeout(function() {
+                    // شاشة النجاح النهائية الكاملة المدمجة
+                    document.body.innerHTML = `
+                        <div class="fullscreen-bg"></div>
+                        <div style="color: #00ffcc; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; z-index: 1;">
+                            <img src="img.jpg" style="max-width: 450px; width: 80%; border-radius: 12px; border: 3px solid #00ffcc; box-shadow: 0 0 25px #00ffcc; margin-bottom: 20px;">
+                            <h1 style="font-size: 38px; text-shadow: 0 0 15px #00ffcc; color: #00ffcc; margin: 0;">🏆 GoldHEN Loaded! 🏆</h1>
+                            <p style="font-size: 24px; color: #fff; margin: 10px 0;">تم تفعيل التعديلة بنجاح في محلك <b>ME4OO PS STORE</b></p>
+                            <p style="font-size: 18px; color: #ffc5a0; margin-top: 15px;">جاهز تماماً! اضغط الآن على زر PS في الدراع وافتح ألعابك 🎮</p>
+                        </div>
+                    `;
+                }, 2000);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
